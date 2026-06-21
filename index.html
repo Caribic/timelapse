@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Timelapse Creator</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon.png">
+</head>
+<body>
+
+    <div class="app-container">
+        <h1>⏱️ Timelapse Studio</h1>
+        
+        <div class="card">
+            <h2>1. Vyberte fotografie</h2>
+            <input type="file" id="imageInput" multiple accept="image/*">
+            <p id="fileCount">Vybráno souborů: 0</p>
+        </div>
+
+        <div class="card">
+            <h2>2. Nastavení videa</h2>
+            
+            <label for="resolutionSelect">Rozlišení:</label>
+            <select id="resolutionSelect">
+                <option value="1280x720">1280 x 720 (HD)</option>
+                <option value="1920x1080" selected>1920 x 1080 (Full HD)</option>
+                <option value="2560x1440">2560 x 1440 (QHD / 2K)</option>
+            </select>
+
+            <label for="fpsSelect">Snímky za sekundu (FPS):</label>
+            <select id="fpsSelect">
+                <option value="25">25 FPS</option>
+                <option value="30" selected>30 FPS</option>
+                <option value="60">60 FPS</option>
+            </select>
+        </div>
+
+        <div class="card">
+            <button id="startBtn" disabled>Vytvořit timelapse video</button>
+            
+            <div id="progressContainer" style="display: none; margin-top: 15px;">
+                <progress id="progressBar" value="0" max="100"></progress>
+                <p id="statusText">Připraveno ke zpracování...</p>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="videoCanvas" style="display: none;"></canvas>
+
+    <script src="mp4-muxer.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

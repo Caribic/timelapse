@@ -1,0 +1,118 @@
+/* Základní nastavení pro celou obrazovku */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0d1117;
+    color: #f0f6fc;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Hlavní kontejner aplikace */
+.app-container {
+    width: 100%;
+    max-width: 450px; /* Ideální šířka pro mobilní displej */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Nadpis */
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Jednotlivé sekce (karty) */
+.card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.card h2 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #58a6ff;
+}
+
+/* Formulářové prvky (výběry, popisky) */
+label {
+    display: block;
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    color: #8b949e;
+}
+
+select, input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    color: #f0f6fc;
+    font-size: 16px; /* 16px brání iOS v automatickém přibližování stránky */
+    box-sizing: border-box;
+}
+
+/* Informační texty */
+p {
+    font-size: 14px;
+    color: #8b949e;
+    margin: 10px 0 0 0;
+}
+
+/* Hlavní akční tlačítko */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #238636;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:disabled {
+    background-color: #21262d;
+    color: #8b949e;
+    cursor: not-allowed;
+    border: 1px solid #30363d;
+}
+
+/* Progress bar (ukazatel průběhu) */
+progress {
+    width: 100%;
+    height: 12px;
+    border-radius: 6px;
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #21262d;
+}
+
+progress::-webkit-progress-value {
+    background-color: #58a6ff;
+}
+
+#statusText {
+    text-align: center;
+    font-weight: 500;
+    color: #58a6ff;
+}
